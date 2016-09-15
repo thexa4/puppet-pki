@@ -1,0 +1,15 @@
+{
+  "name": "thexa4-pki",
+  "version": "0.1.0",
+  "author": "thexa4",
+  "summary": "Makes puppet signed certificates available for use for other applications",
+  "license": "MIT",
+  "source": "https://github.com/thexa4/puppet-pki",
+  "project_page": "https://github.com/thexa4/puppet-pki",
+  "issues_url": "https://github.com/thexa4/puppet-pki/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+

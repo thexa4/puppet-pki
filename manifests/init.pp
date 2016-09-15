@@ -1,4 +1,4 @@
-class pks {
+class pki {
 	
 	group { "ssl-cert":
 		ensure => present,

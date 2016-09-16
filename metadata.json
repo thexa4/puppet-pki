@@ -2,7 +2,7 @@
   "name": "thexa4-pki",
   "version": "0.1.2",
   "author": "thexa4",
-  "summary": "Makes puppet signed certificates available for use for other applications",
+  "summary": "Makes puppet signed certificates available for use to other applications",
   "license": "MIT",
   "source": "https://github.com/thexa4/puppet-pki",
   "project_page": "https://github.com/thexa4/puppet-pki",

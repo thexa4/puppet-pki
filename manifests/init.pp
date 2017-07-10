@@ -5,13 +5,15 @@ class pki {
     system => true,
   }
 
-  $host = $::trusted["certname"];
+  $host = $::trusted['certname']
+  $ssldir = $::facts['puppet_ssldir']
+
   file { '/etc/ssl/private/host.key':
     ensure  => link,
-    target  => "/etc/puppetlabs/puppet/ssl/private_keys/${host}.pem",
+    target  => "${ssldir}/private_keys/${host}.pem",
     require => [
-      File['/etc/puppetlabs/puppet/ssl/private_keys'],
-      File["/etc/puppetlabs/puppet/ssl/private_keys/${host}.pem"],
+      File["${ssldir}/private_keys"],
+      File["${ssldir}/private_keys/${host}.pem"],
     ],
   }
 
@@ -21,13 +23,13 @@ class pki {
     require => Group['ssl-cert'],
   }
 
-  file { '/etc/puppetlabs/puppet/ssl/private_keys':
+  file { "${ssldir}/private_keys":
     ensure  => directory,
     group   => 'ssl-cert',
     require => Group['ssl-cert'],
   }
 
-  file { "/etc/puppetlabs/puppet/ssl/private_keys/${host}.pem":
+  file { "${ssldir}/private_keys/${host}.pem":
     ensure  => present,
     group   => 'ssl-cert',
     require => Group['ssl-cert'],
@@ -35,11 +37,11 @@ class pki {
 
   file { '/etc/ssl/certs/host.crt':
     ensure => link,
-    target => "/etc/puppetlabs/puppet/ssl/certs/${host}.pem",
+    target => "${ssldir}/certs/${host}.pem",
   }
 
   file { '/etc/ssl/certs/host-ca.crt':
     ensure => link,
-    target => '/etc/puppetlabs/puppet/ssl/certs/ca.pem',
+    target => "${ssldir}/certs/ca.pem",
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "thexa4-pki",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "thexa4",
   "summary": "Makes puppet signed certificates available for use to other applications",
   "license": "MIT",
@@ -13,7 +13,7 @@
   "operatingsystem_support": [
     {
       "operatingsystem":"Debian",
-      "operatingsystemrelease":[ "8" ]
+      "operatingsystemrelease":[ "8", "9" ]
     }
   ]
 }

@@ -13,10 +13,6 @@ class pki {
     source  => "${ssldir}/private_keys/${host}.pem",
     group   => 'ssl-cert',
     mode    => '0640',
-    require => [
-      File["${ssldir}/private_keys"],
-      File["${ssldir}/private_keys/${host}.pem"],
-    ],
   }
 
   file { '/etc/ssl/private':
